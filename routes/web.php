@@ -3,11 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
+Route::get('/', [ContactController::class, 'create'])->name('contact.create');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 // 送信後のルート
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
